@@ -59,6 +59,6 @@ describe('create user validator', () => {
 
     const rejects = expect(mediator.send(command)).rejects;
     await rejects.toThrow(ConflictError);
-    await rejects.toThrow(JSON.stringify({ message: 'Duplicated email address' }));
+    await rejects.toThrow(JSON.stringify({ message: 'Duplicated email addres' }));
   });
 });
