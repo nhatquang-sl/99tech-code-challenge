@@ -9,11 +9,7 @@ describe('get users handler', () => {
   beforeAll(async () => {
     await dbContext.connect();
     await initializeDb();
-    let count = 0;
-    USERS_DATA.map((u) => u.lastName).forEach((email) => {
-      if (email.includes('ea')) count++;
-    });
-    console.log(`Total .com emails: ${count}`);
+
     const users = USERS_DATA.map(
       (u) =>
         ({

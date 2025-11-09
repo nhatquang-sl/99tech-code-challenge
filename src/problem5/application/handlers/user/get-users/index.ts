@@ -28,7 +28,6 @@ export class GetUsersQueryHandler
   async handle(command: GetUsersQuery): Promise<PaginationDto<UserDetailsDto>> {
     const where: any = this.buildWhereClause(command);
     const { page, pageSize } = command;
-    console.log({ page, pageSize });
     const { rows, count } = await User.findAndCountAll({
       where,
       limit: pageSize,

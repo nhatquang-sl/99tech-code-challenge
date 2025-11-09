@@ -25,8 +25,6 @@ class DbContext {
   async connect() {
     try {
       await this.sequelize.authenticate();
-
-      console.log('Connected to database');
     } catch (e: any) {
       console.log('Occured error when connecting to database. Error:', e.message);
     }
