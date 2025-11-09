@@ -9,13 +9,9 @@
         "src/problem5/config"
       ],
       "@config/*": ["src/problem5/config/*"],
-      // "@application/*": ["application/*"],
-      // "@services/*": ["services/*"],
+      "@application/*": ["src/problem5/application/*"],
       "@database": ["src/problem5/database"],
       "@database/*": ["src/problem5/database/*"]
-      // "@controllers/*": ["controllers/*"],
-      // "@middleware/*": ["middleware/*"],
-      // "@libs/*": ["../front-end/src/shared/*"]
     },
 
     "esModuleInterop": true,

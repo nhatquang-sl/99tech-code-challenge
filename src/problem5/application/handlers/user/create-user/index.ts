@@ -11,6 +11,7 @@ import {
 import bcrypt from 'bcrypt';
 import { v4 as uuidv4 } from 'uuid';
 import z from 'zod';
+import { UserDetailsDto } from '../shared/dto';
 import { CreateUserCommandSchema } from './validator';
 
 export class CreateUserCommand implements ICommand {
@@ -27,25 +28,11 @@ export class CreateUserCommand implements ICommand {
   }
 }
 
-export class CreateUserResult {
-  declare id: number;
-  declare firstName: string;
-  declare lastName: string;
-  declare emailAddress: string;
-
-  constructor(data: any) {
-    this.id = data.id;
-    this.firstName = data.firstName;
-    this.lastName = data.lastName;
-    this.emailAddress = data.emailAddress;
-  }
-}
-
 @RegisterHandler
 export class CreateUserCommandHandler
-  implements ICommandHandler<CreateUserCommand, CreateUserResult>
+  implements ICommandHandler<CreateUserCommand, UserDetailsDto>
 {
-  async handle(command: CreateUserCommand): Promise<CreateUserResult> {
+  async handle(command: CreateUserCommand): Promise<UserDetailsDto> {
     // encrypt the password
     const salt = uuidv4().split('-')[0];
     const password = await bcrypt.hash(command.password + salt, 10);
@@ -59,7 +46,7 @@ export class CreateUserCommandHandler
       salt,
     } as User);
 
-    return new CreateUserResult(result);
+    return new UserDetailsDto(result);
   }
 }
 

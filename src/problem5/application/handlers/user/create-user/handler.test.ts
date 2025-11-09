@@ -1,6 +1,7 @@
 import { dbContext, initializeDb, User } from '@database';
 import { mediator } from '@qnn92/mediatorts';
-import { CreateUserCommand, CreateUserResult } from '.';
+import { CreateUserCommand } from '.';
+import { UserDetailsDto } from '../shared/dto';
 
 const user = {
   emailAddress: 'email.valid@yopmail.com',
@@ -18,7 +19,7 @@ describe('create user handler', () => {
   test('should return result success', async () => {
     let command = new CreateUserCommand(user);
 
-    const result = (await mediator.send(command)) as CreateUserResult;
+    const result = await mediator.send<UserDetailsDto>(command);
     expect(result).toBeDefined();
     expect(result.id).toBe(1);
     expect(result.emailAddress).toBe(user.emailAddress);
@@ -29,7 +30,7 @@ describe('create user handler', () => {
   test('should insert into database success', async () => {
     let command = new CreateUserCommand(user);
 
-    const result = (await mediator.send(command)) as CreateUserResult;
+    const result = await mediator.send<UserDetailsDto>(command);
     const entity = await User.findByPk(result.id);
 
     expect(entity).toBeDefined();
