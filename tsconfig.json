@@ -4,7 +4,7 @@
     "module": "commonjs",
     "baseUrl": "./",
     "outDir": "./dist",
-       "paths": {
+    "paths": {
       "@config": [
         "src/problem5/config"
       ],
@@ -12,7 +12,7 @@
       // "@application/*": ["application/*"],
       // "@services/*": ["services/*"],
       "@database": ["src/problem5/database"],
-      "@database/*": ["src/problem5/database/*"],
+      "@database/*": ["src/problem5/database/*"]
       // "@controllers/*": ["controllers/*"],
       // "@middleware/*": ["middleware/*"],
       // "@libs/*": ["../front-end/src/shared/*"]
