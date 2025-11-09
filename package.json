@@ -3,7 +3,8 @@
     "p5": "nodemon -r tsconfig-paths/register src/problem5/index.ts",
     "p5-build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json  && shx cp -R src/problem5/config/99tech-credentials dist/problem5/config",
     "p5-test": "set NODE_ENV=test && jest --watchAll problem5",
-    "test4": "jest --watchAll problem4"
+    "p4-test": "jest --watchAll problem4",
+    "test": "set NODE_ENV=test && jest"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
