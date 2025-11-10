@@ -8,7 +8,10 @@ class DbContext {
   constructor() {
     // Option 3: Passing parameters separately (other dialects)
     if (process.env.NODE_ENV === 'test')
-      this.sequelize = new Sequelize('sqlite::memory:', { logging: false });
+      // Use options form with dialect and storage instead of a sqlite URL string.
+      // Passing the URL 'sqlite::memory:' triggers Node URL parsing deprecation
+      // (DEP0170). Using { dialect: 'sqlite', storage: ':memory:' } avoids that.
+      this.sequelize = new Sequelize({ dialect: 'sqlite', storage: ':memory:', logging: false });
     else
       this.sequelize = new Sequelize(ENV.DB_NAME, ENV.DB_USERNAME, ENV.DB_PASSWORD, {
         host: ENV.DB_HOST,
