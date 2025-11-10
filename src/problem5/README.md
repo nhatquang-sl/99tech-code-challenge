@@ -1,7 +1,13 @@
+- [How to run](#how-to-run)
+- [Folder Structure](#folder-structure)
+   * [application](#application)
+   * [controllers](#controllers)
+- [Libraries:](#libraries)
+
 # How to run
-- Install node version v20.19.5
+- Using node version v20.19.5
 - `npm i`: run at the root folder to install dependencies
-- `npm run problem5`: run at the root folder to start
+- `npm run p5`: run at the root folder to start
 
 # Folder Structure
 ```text
