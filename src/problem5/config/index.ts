@@ -2,12 +2,7 @@ import * as dotenv from 'dotenv';
 import path from 'path';
 import { z } from 'zod';
 
-dotenv.config({ path: path.join(__dirname, '99tech-credentials', '.development.env') });
-if (process.env.NODE_ENV?.trim() == 'production')
-  dotenv.config({
-    path: path.join(__dirname, '99tech-credentials', '.env'),
-    override: true,
-  });
+dotenv.config({ path: path.join(__dirname, '99tech-credentials', '.env'), quiet: true });
 
 const envSchema = z.object({
   // See https://cjihrig.com/node_env_considered_harmful
