@@ -6,8 +6,8 @@
 
 # How to run
 - Using node version v20.19.5
-- `npm i`: run at the root folder to install dependencies
-- `npm run p5`: run at the root folder to start
+- `npm i`: run at the `99tech-code-challenge` folder to install dependencies
+- `npm run p5`: run at the `99tech-code-challenge` folder to start
 
 # Folder Structure
 ```text
