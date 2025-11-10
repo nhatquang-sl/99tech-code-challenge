@@ -10,6 +10,7 @@
       ],
       "@config/*": ["src/problem5/config/*"],
       "@application/*": ["src/problem5/application/*"],
+      "@controllers/*": ["src/problem5/controllers/*"],
       "@database": ["src/problem5/database"],
       "@database/*": ["src/problem5/database/*"]
     },

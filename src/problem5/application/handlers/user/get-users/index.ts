@@ -16,8 +16,8 @@ export class GetUsersQuery implements ICommand {
     this.firstName = data.firstName;
     this.lastName = data.lastName;
     this.emailAddress = data.emailAddress;
-    this.page = data.page;
-    this.pageSize = data.pageSize;
+    this.page = data.page ?? 1;
+    this.pageSize = data.pageSize ?? 10;
   }
 }
 
@@ -28,6 +28,7 @@ export class GetUsersQueryHandler
   async handle(command: GetUsersQuery): Promise<PaginationDto<UserDetailsDto>> {
     const where: any = this.buildWhereClause(command);
     const { page, pageSize } = command;
+
     const { rows, count } = await User.findAndCountAll({
       where,
       limit: pageSize,
