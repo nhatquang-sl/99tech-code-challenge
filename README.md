@@ -1,1 +1,2 @@
-[Problem 5](src/problem5/README.md)
+- [Problem 5](src/problem5/README.md)
+- [Problem 6](src/problem6/README.md)

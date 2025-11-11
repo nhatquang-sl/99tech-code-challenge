@@ -1,3 +1,16 @@
+- [Overview](#overview)
+   * [Assumptions](#assumptions)
+- [Flow of Execution](#flow-of-execution)
+   * [Calculate Top 10](#calculate-top-10)
+   * [Get Top 10](#get-top-10)
+- [Database](#database)
+- [API Endpoints](#api-endpoints)
+- [Tasks](#tasks)
+   * [Implement /action API](#implement-action-api)
+   * [Implement SyncWorker](#implement-syncworker)
+   * [Implement CalculateWorker](#implement-calculateworker)
+   * [Implement /leaderboard API](#implement-leaderboard-api)
+   
 # Overview
  - The Leaderboard Service is responsible for maintaining a live-updating top 10 user scores on our website.
  - This module ensures that user scores are updated securely upon completion of actions, while preventing unauthorized score manipulation.
